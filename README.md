@@ -1,3 +1,5 @@
+####How to Run the Node-Express Backend
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -21,4 +23,4 @@ add any evironmental variables you may need to the .env files
 
 Then add your .env and .envdefault environmental variables to your .gitignore
 
-
+### Please reference the Read me in client to see how to run the React application
