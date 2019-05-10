@@ -11,23 +11,27 @@ export default class Facebook extends Component {
   };
 
   responseFacebook = response => {
-    // console.log(response);
+    console.log(response.accessToken);
 
     this.setState({
       isLoggedIn: true,
       userID: response.userID,
       name: response.name,
       email: response.email,
-      picture: response.picture.data.url
+      picture: response.picture.data.url,
+      accessToken: response.accessToken
+
     });
   };
 
   componentClicked = () => console.log("clicked");
 
   render() {
-    let fbContent;
+    let fbContent; // boolean value
+
 
     if (this.state.isLoggedIn) {
+
       fbContent = (
         <div
           style={{
@@ -35,13 +39,16 @@ export default class Facebook extends Component {
             margin: "auto",
             background: "#f4f4f4",
             padding: "20px"
-          }}
-        >
+          }}>
+
           <img src={this.state.picture} alt={this.state.name} />
           <h2>Welcome {this.state.name}</h2>
           Email: {this.state.email}
         </div>
       );
+
+
+
     } else {
       fbContent = (
         <FacebookLogin
